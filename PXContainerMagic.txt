@@ -1,0 +1,8 @@
+## Title: PhaeroX Container Magic
+## APIVersion: 100022 100023
+## Description: Automatically open containers in your inventory.
+## Version: 0.0.1
+## Author: |c33BBCCPhaeroX|r
+
+PXContainerMagic.lua
+Bindings.xml
