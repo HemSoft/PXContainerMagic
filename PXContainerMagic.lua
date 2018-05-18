@@ -1,6 +1,6 @@
 PXContainerMagic = {
   Name = "PXContainerMagic",
-  Version = "1.0.0",
+  Version = "1.0.2",
   LootInitiated = false
 }
 
@@ -10,14 +10,12 @@ PXContainerMagic = {
 function PXContainerMagic.OnAddOnLoaded(event, addonName)
   -- The event fires each time *any* addon loads - but we only care about when our own addon loads.
   if addonName == PXContainerMagic.Name then
-    d('PXCM -- OnAddOnLoaded')
     Initialize()
   end
 end
 
 function PXContainerMagic.OnLootUpdated()
   if (PXContainerMagic.LootInitiated == true) then
-    d('PXCM -- PXContainerMagic.OnLootUpdated()')
     LootAll()
     PXContainerMagic.LootInitiated = false
 
@@ -33,20 +31,18 @@ function PXContainerMagic.OnLootUpdated()
 end
 
 function Initialize()
-  d('PXCM -- Initialize')
   ZO_CreateStringId("SI_BINDING_NAME_PX_CONTAINER_MAGIC_OPEN", "Open all containers")
 end
 
 function OpenContainers()
   local inventoryCount = GetBagSize(INVENTORY_BACKPACK)
-  d('PXCM -- PXContainerMagic:OpenContainers()')
 
   for x = 0, inventoryCount do
     local link = GetItemLink(INVENTORY_BACKPACK, x)
     local itemType =  GetItemType(INVENTORY_BACKPACK, x)
 
     if (itemType == ITEMTYPE_CONTAINER) then
-      d('PXCM -- Opening ' .. link)
+      --d('PXCM -- Opening ' .. link)
       openContainer(INVENTORY_BACKPACK, x)
       break
     end
@@ -61,7 +57,6 @@ function openContainer(bag, slot)
   end
   
   if IsProtectedFunction("UseItem") then
-    --d("Attempting to open container "..GetItemLink(bag, slot))
     CallSecureProtected("UseItem", bag, slot)
   else
     UseItem(bag, slot)
