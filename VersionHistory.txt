@@ -1,0 +1,2 @@
+V1.0.1
+- First version. This addon is dedicated to @inklings to help him out with his powerleveling of the upcoming Summerset crafting skill line :)
