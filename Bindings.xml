@@ -2,7 +2,7 @@
     <Layer name="SI_KEYBINDINGS_LAYER_GENERAL">
         <Category name="|cd8b620PhaeroX|r Container Magic">
             <Action name="PX_CONTAINER_MAGIC_OPEN">
-                <Down>PXContainerMagic_OpenContainers()</Down>
+                <Down>OpenContainers()</Down>
             </Action>
         </Category>
     </Layer>
