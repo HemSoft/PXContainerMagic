@@ -1,3 +1,6 @@
+V1.0.3
+- API bump for Wolfhunter.
+
 V1.0.2
 - Removed debugging code.
 - Aligned all version numbers correctly.
