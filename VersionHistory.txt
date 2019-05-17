@@ -1,3 +1,7 @@
+V1.0.5 -- 2019/05/17
+- API bump for Elsweyr
+- Do not attempt to open style plage containers.
+
 V1.0.4 -- 2019/03/03
 - API bump for Wrathstone.
 

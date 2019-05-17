@@ -1,6 +1,6 @@
 PXContainerMagic = {
   Name = "PXContainerMagic",
-  Version = "1.0.4",
+  Version = "1.0.5",
   LootInitiated = false
 }
 
@@ -39,9 +39,9 @@ function OpenContainers()
 
   for x = 0, inventoryCount do
     local link = GetItemLink(INVENTORY_BACKPACK, x)
-    local itemType =  GetItemType(INVENTORY_BACKPACK, x)
+    local itemType, specializedItemType = GetItemLinkItemType(link)
 
-    if (itemType == ITEMTYPE_CONTAINER) then
+    if (itemType == ITEMTYPE_CONTAINER and specializedItemType ~= SPECIALIZED_ITEMTYPE_CONTAINER_STYLE_PAGE) then
       --d('PXCM -- Opening ' .. link)
       openContainer(INVENTORY_BACKPACK, x)
       break
